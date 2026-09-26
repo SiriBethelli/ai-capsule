@@ -7,6 +7,9 @@ const sqlite3 = require("sqlite3").verbose();
 dotenv.config();
 
 const app = express();
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 app.use(cors());
 app.use(express.json());
 
